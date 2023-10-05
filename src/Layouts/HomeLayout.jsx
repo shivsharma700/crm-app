@@ -35,8 +35,10 @@ function HomeLayout({children}){
                <div className="drawer-side">
                   <label htmlFor="my-drawer" className="drawer-overlay"></label>
                   <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
-                     <li><a>Sidebar Item 1</a></li>
-                     <li><a>Sidebar Item 2</a></li>
+                     <li><Link to={"/"}>Home</Link></li>
+                     <li><Link to={"/dashboard"}>Dashboard</Link></li>
+                     <li><Link to={"/ticket/create"}>Rise Ticket</Link></li>
+                     {authState.role == "admin" || authState.role == "engineer" && <li><Link to={"/users"} >All Users</Link></li>}
                      <li className="w-3/4  absolute bottom-8 ">
                         <div className="flex">
                             {
